@@ -33,7 +33,7 @@
 
 <h3>Syntax Overview</h3>
 
-<p>A Geoff document is composed of one or more subgraphs, separated by the ~~~~ sequence. Each subgraph consists of one or more paths, consisting of nodes and relationships. For example:</p>
+<p>A Geoff document is composed of one or more subgraphs, separated by the <code>~~~~</code> sequence. Each subgraph consists of one or more paths, consisting of nodes and relationships. For example:</p>
 
 <pre>
 (alice {"name":"Alice"})
@@ -44,7 +44,7 @@
 
 <h3>Nodes</h3>
 
-<p>Each node can have an identifier, a set of labels and a set of associated properties. None of these attributes are mandatory though, and in the simplest case, a node may just be an empty set of parentheses: (). The examples below show some of the combinations possible:</p>
+<p>Each node can have an identifier, a set of labels and a set of associated properties. None of these attributes are mandatory though, and in the simplest case, a node may just be an empty set of parentheses: <code>()</code>. The examples below show some of the combinations possible:</p>
 
 <pre>
 (a)
@@ -72,7 +72,7 @@
 
 <p>When a subgraph is loaded into a database, new nodes and relationships are generally created. In some instances, it is desirable to use an existing node instead. In such cases, a hook can be used to bind a node to an existing one with the same label, key and value. If none is found, one will be created; if more than one is found, one will be chosen.</p>
 
-<p>Hooks are enclosed within colons and use a heavy arrow (=>) to bind them to a node within the subgraph. The subgraph below shows one hook and three new nodes.</p>
+<p>Hooks are enclosed within colons and use a heavy arrow (<code>=&gt;</code>) to bind them to a node within the subgraph. The subgraph below shows one hook and three new nodes.</p>
 
 <pre>
 :Person:name:=>(alice:Person {"name":"Alice"})
