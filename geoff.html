@@ -15,12 +15,12 @@
 
     <header>
       <div class="container">
-        <h1>Nigel Small</h1>
+        <h1><a href="/">Nigel Small</a></h1>
         <h2>Open Sorcery</h2>
-
-        <section id="downloads">
-          <a href="https://github.com/nigelsmall" class="btn btn-github"><span class="icon"></span>View on GitHub</a>
-        </section>
+        <div class="contact">
+          <a href="https://github.com/nigelsmall"><img src="images/github_mark.png"></a>
+          <a href="https://twitter.com/technige"><img src="images/twitter_mark.png"></a>
+        </div>
       </div>
     </header>
 
@@ -118,7 +118,7 @@ string_array   := "[" ~ JSON_STRING (~ "," ~ JSON_STRING)* ~ "]"
 numeric_array  := "[" ~ JSON_NUMBER (~ "," ~ JSON_NUMBER)* ~ "]"
 boolean_array  := "[" ~ JSON_BOOLEAN (~ "," ~ JSON_BOOLEAN)* ~ "]"
 
-* Mandatory whitespace is shown by "_" and optional whitespace by "~"
+* Mandatory whitespace is represented by "_" and optional whitespace by "~"
 </pre>
 
       </section>

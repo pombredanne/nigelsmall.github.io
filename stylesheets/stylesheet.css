@@ -11,8 +11,9 @@ body {
 /* General & 'Reset' Stuff */
 
 .container {
+  position: relative;
   width: 90%;
-  max-width: 600px;
+  max-width: 720px;
   margin: 0 auto;
 }
 
@@ -55,6 +56,10 @@ header h1 {
                0 0 10px rgba(181, 232, 83, 0.1);
   letter-spacing: -1px;
   -webkit-font-smoothing: antialiased;
+}
+header h1 a {
+  color: #b5e853;
+  text-decoration: none;
 }
 
 header h1:before {
@@ -244,4 +249,12 @@ a {
 
 .cf {
   zoom:1;
+}
+
+/* Other */
+
+.contact {
+  position: absolute;
+  top: 0;
+  right: 0;
 }
