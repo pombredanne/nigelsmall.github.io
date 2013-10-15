@@ -27,11 +27,11 @@
     <div class="container">
       <section id="main_content">
 
-<h3>Geoff</h3>
+<h2>Geoff</h2>
 
 <p>Geoff is a simple text-based format for storing flat file graph data and should be recognisable to anyone familiar with Cypher, on which its syntax is based.</p>
 
-<h4>Syntax Overview</h4>
+<h3>Syntax Overview</h3>
 
 <p>A Geoff document is composed of one or more subgraphs, separated by the ~~~~ sequence. Each subgraph consists of one or more paths, consisting of nodes and relationships. For example:</p>
 
@@ -42,7 +42,7 @@
 (alice)<-[:KNOWS]->(bob)<-[:KNOWS]->(carol)<-[:KNOWS]->(alice)
 </pre>
 
-<h4>Nodes</h4>
+<h3>Nodes</h3>
 
 <p>Each node can have an identifier, a set of labels and a set of associated properties. None of these attributes are mandatory though, and in the simplest case, a node may just be an empty set of parentheses: (). The examples below show some of the combinations possible:</p>
 
@@ -54,11 +54,11 @@
 (dinner:Spam:Egg:Chips {"foo":"bar","answer":42})
 </pre>
 
-<h4>Relationships</h4>
+<h3>Relationships</h3>
 
 <p>Any number of nodes may be chained together in a path using relationships, drawn as in Cypher.</p>
 
-<h4>Properties</h4>
+<h3>Properties</h3>
 
 <p>Properties are represented in JSON format and may be provided in single nodes, in longer paths or in both:</p>
 
@@ -68,7 +68,7 @@
 (alice {"age":33})<-[:KNOWS]->(bob {"age":44})
 </pre>
 
-<h4>Hooks</h4>
+<h3>Hooks</h3>
 
 <p>When a subgraph is loaded into a database, new nodes and relationships are generally created. In some instances, it is desirable to use an existing node instead. In such cases, a hook can be used to bind a node to an existing one with the same label, key and value. If none is found, one will be created; if more than one is found, one will be chosen.</p>
 
@@ -81,7 +81,7 @@
 (alice)-[:KNOWS]->(dave:Person {"name":"Dave"})
 </pre>
 
-<h4>Full Syntax Specification</h4>
+<h3>Full Syntax Specification</h3>
 
 <pre>
 document       := subgraph (_ boundary _ subgraph)*
@@ -118,7 +118,7 @@ string_array   := "[" ~ JSON_STRING (~ "," ~ JSON_STRING)* ~ "]"
 numeric_array  := "[" ~ JSON_NUMBER (~ "," ~ JSON_NUMBER)* ~ "]"
 boolean_array  := "[" ~ JSON_BOOLEAN (~ "," ~ JSON_BOOLEAN)* ~ "]"
 
-* Mandatory whitespace is represented by "_" and optional whitespace by "~"
+* Mandatory whitespace is shown by "_" and optional whitespace by "~"
 </pre>
 
       </section>
