@@ -3,9 +3,173 @@
   <head>
     <meta charset='utf-8'>
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <meta http-equiv="refresh" content="0; url=https://github.com/nigelsmall/syntaq">
+
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
+
+    <title>Syntaq - Nigel Small - Open Sorcery</title>
   </head>
+
   <body>
+
+    <header>
+      <div class="container">
+        <h1><a href="/">Nigel Small</a></h1>
+        <h2>Open Sorcery</h2>
+        <div class="contact">
+          <a href="https://github.com/nigelsmall"><img src="images/github_mark.png"></a>
+          <a href="https://twitter.com/technige"><img src="images/twitter_mark.png"></a>
+        </div>
+      </div>
+    </header>
+
+    <div class="container">
+      <section id="main_content">
+
+        <h2>Syntaq</h2>
+
+        <p>Syntaq is a lightweight markup language based on (and backward compatible with) <a href="http://www.wikicreole.org/">Creole</a>. On top of standard Creole notation, Syntaq also supports the following:</p>
+
+        <ul>
+          <li>Subscript and superscript</li>
+          <li>Inline and block quotations</li>
+          <li>Inline and block computer code</li>
+          <li>HTML class values on preformatted and code blocks</li>
+          <li>Table cell alignment</li>
+        </ul>
+        
+        <a name="cheatsheet"></a>
+        <h3>Cheat Sheet</h3>
+        
+        <table>
+          <tr>
+            <th>Markup</th>
+            <th></th>
+            <th>Output</th>
+          </tr>
+          <tr>
+            <td>= Heading<br>== Subheading<br>=== Section Heading</td>
+            <td>&rarr;</td>
+            <td><h1 class="nomargin">Heading</h1><h2 class="nomargin">Subheading</h2><h3 class="nomargin">Section Heading</h3></td>
+          </tr>
+          <tr><td colspan="3"><hr></td></tr>
+          <tr>
+            <td>//italics, emphasis//</td>
+            <td>&rarr;</td>
+            <td><em>italics, emphasis</em></td>
+          </tr>
+          <tr>
+            <td>**bold, strong emphasis**</td>
+            <td>&rarr;</td>
+            <td><strong>bold, strong emphasis</strong></td>
+          </tr>
+          <tr>
+            <td>sub,,script,,</td>
+            <td>&rarr;</td>
+            <td>sub<sub>script</sub></td>
+          </tr>
+          <tr>
+            <td>super^^script^^</td>
+            <td>&rarr;</td>
+            <td>super<sup>script</sup></td>
+          </tr>
+          <tr>
+            <td>""inline quotation""</td>
+            <td>&rarr;</td>
+            <td><q>inline quotation</q></td>
+          </tr>
+          <tr>
+            <td>``computer(code)``</td>
+            <td>&rarr;</td>
+            <td><code>computer(code)</code></td>
+          </tr>
+          <tr><td colspan="3"><hr></td></tr>
+          <tr>
+            <td>"""<br>Block quotes can be included<br>within triple double-quotes!<br>"""</td>
+            <td>&rarr;</td>
+            <td><blockquote>Block quotes can be included within triple double-quotes!</blockquote></td>
+          </tr>
+          <tr>
+            <td>```<br># block of computer code<br>def hello():<br>&nbsp;&nbsp;&nbsp;&nbsp;print("hello, world")<br>```</td>
+            <td>&rarr;</td>
+            <td><pre><code># block of computer code
+def hello():
+    print("hello, world")</code></pre></td>
+          </tr>
+          <tr><td colspan="3"><hr></td></tr>
+          <tr>
+            <td>[[http://mozilla.org/]]</td>
+            <td>&rarr;</td>
+            <td><a href="http://mozilla.org/">http://mozilla.org/</a></td>
+          </tr>
+          <tr>
+            <td>[[http://mozilla.org/|Mozilla]]</td>
+            <td>&rarr;</td>
+            <td><a href="http://mozilla.org/">Mozilla</a></td>
+          </tr>
+          <tr>
+            <td>{{mozilla.png}}</td>
+            <td>&rarr;</td>
+            <td><img src="images/mozilla.png"></td>
+          </tr>
+          <tr>
+            <td>{{mozilla.png|Mozilla}}</td>
+            <td>&rarr;</td>
+            <td><img src="images/mozilla.png" title="Mozilla"></td>
+          </tr>
+          <tr>
+            <td>[[http://mozilla.org/|{{mozilla.png}}]]</td>
+            <td>&rarr;</td>
+            <td><a href="http://mozilla.org/"><img src="images/mozilla.png"></a></td>
+          </tr>
+          <tr><td colspan="3"><hr></td></tr>
+          <tr>
+            <td>* unordered list<br>* with<br>** sub-items</td>
+            <td>&rarr;</td>
+            <td><ul class="nomargin"><li>unordered list</li><li>with</li><ul><li>sub-items</li></ul></ul></td>
+          </tr>
+          <tr>
+            <td># ordered list<br># with<br>## sub-items</td>
+            <td>&rarr;</td>
+            <td><ol class="nomargin"><li>ordered list</li><li>with</li><ol><li>sub-items</li></ol></ol></td>
+          </tr>
+          <tr><td colspan="3"><hr></td></tr>
+          <tr>
+            <td>line breaks\\can be forced</td>
+            <td>&rarr;</td>
+            <td>line breaks<br>can be forced</td>
+          </tr>
+          <tr><td colspan="3"><hr></td></tr>
+          <tr>
+            <td>Paragraphs have blank<br>lines between them.<br><br>Just like this.</td>
+            <td>&rarr;</td>
+            <td><p>Paragraphs have blank<br>lines between them.</p><p>Just like this.</p></td>
+          </tr>
+          <tr><td colspan="3"><hr></td></tr>
+          <tr>
+            <td>above the horizontal rule<br>----<br>below the horizontal rule</td>
+            <td>&rarr;</td>
+            <td>above the horizontal rule<hr>below the horizontal rule</td>
+          </tr>
+          <tr><td colspan="3"><hr></td></tr>
+          <tr>
+            <td>|=Table Headers|=Use Pipes|<br>|and so&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|do cells&nbsp;&nbsp;|</td>
+            <td>&rarr;</td>
+            <td></td>
+          </tr>
+          <tr><td colspan="3"><hr></td></tr>
+          <tr>
+            <td>{{{<br>== [[Nowiki]]:<br>//**don't** format//<br>}}}</td>
+            <td>&rarr;</td>
+            <td>== [[Nowiki]]:<br>//**don't** format//</td>
+          </tr>
+          <tr><td colspan="3"><hr></td></tr>
+        </table>
+
+      </section>
+    </div>
+
 <script type="text/javascript">
 var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
 document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
@@ -16,6 +180,7 @@ var pageTracker = _gat._getTracker("UA-25485551-12");
 pageTracker._trackPageview();
 } catch(err) {}
 </script>
+
+
   </body>
 </html>
-

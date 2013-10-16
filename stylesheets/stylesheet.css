@@ -263,3 +263,12 @@ a {
 .contact img {
   margin-left: 7px;
 }
+
+table hr {
+    padding: 0;
+}
+
+.nomargin {
+    margin: 0;
+}
+
