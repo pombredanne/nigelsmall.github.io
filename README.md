@@ -1,4 +1,1 @@
-nigelsmall.github.com
-=====================
-
-Personal pages
+nigelsmall.github.io
