@@ -36,16 +36,19 @@ instantly readable to anyone familiar with
 
 <h3>Implementations</h3>
 
-<p>There have been three Geoff parser implementations, each based on a
-slightly different variant of the format. The most recent evolution, described
-here and designed for Neo4j 2.0 and upwards, is represented by a new Neo4j server extension called
-<a href="load2neo">load2neo</a>.</p>
+<p>There have been three Geoff parser-loader implementations, each based on a
+slightly different variant of the format. The most recent version, described
+on this page and designed for Neo4j 2.0 and upwards, is represented by a new
+Neo4j server extension called <a href="load2neo">load2neo</a>.</p>
 
 <p>An earlier server plugin, <a href="https://github.com/neo4j-contrib/neo4j-geoff">neo4j-geoff</a>,
-is now also compatible with Neo4j 2.0 but does not have support for labels,
-unlike load2neo. A client-only version also exists in <a href="http://book.py2neo.org/en/latest/geoff/">py2neo</a>,
-which also has no label support and, due to its use of the REST API, is somewhat
-less scalable than the server extensions.</p>
+is also compatible with Neo4j 2.0 (thanks to generous assitance from
+<a href="https://twitter.com/peterneubauer">Peter Neubauer</a>) but does not
+provide support for labels, unlike load2neo. A client side parser-loader also
+exists in <a href="http://book.py2neo.org/en/latest/geoff/">py2neo</a>.
+This also has no label support and, due to its use of the REST API, is somewhat
+less scalable than the server extensions. A demo of the XML to Geoff
+conversion tool, distributed with py2neo, can be seen at <a href="http://api.nigelsmall.com/xml-geoff">http://api.nigelsmall.com/xml-geoff</a>.</p>
 
 <h3>Syntax Overview</h3>
 
@@ -100,6 +103,8 @@ less scalable than the server extensions.</p>
 
 <h3>Full Syntax Specification</h3>
 
+<p>A full specification for the Geoff syntax is described below:</p>
+
 <pre>
 document       := subgraph (_ boundary _ subgraph)*
 boundary       := "~~~~"
@@ -137,6 +142,12 @@ boolean_array  := "[" ~ JSON_BOOLEAN (~ "," ~ JSON_BOOLEAN)* ~ "]"
 
 * Mandatory whitespace is represented by "_" and optional whitespace by "~"
 </pre>
+
+<h3>Why "Geoff"?</h3>
+
+<p>Geoff is a contrived acronym standing for Graph Export Object File Format.
+More importantly, it was the name of my grandfather who gave me my first
+computer, a <a href="http://en.wikipedia.org/wiki/Dragon_32/64">Dragon 32</a>, in 1983.</p>
 
       </section>
     </div>
