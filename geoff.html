@@ -29,11 +29,27 @@
 
 <h2>Geoff</h2>
 
-<p>Geoff is a text-based interchange format for graph data that should be recognisable to anyone familiar with <a href="http://www.neo4j.org/learn/cypher">Cypher</a>, on which its syntax is based.</p>
+<p>Geoff is a text-based interchange format for <a href="http://neo4j.org/">Neo4j</a> graph data that should be
+instantly readable to anyone familiar with
+<a href="http://www.neo4j.org/learn/cypher">Cypher</a>, on which its syntax is based.</p>
+
+
+<h3>Implementations</h3>
+
+<p>There have been three Geoff parser implementations, each based on a
+slightly different variant of the format. The most recent evolution, described
+here and designed for Neo4j 2.0 and upwards, is represented by a new Neo4j server extension called
+<a href="load2neo">load2neo</a>.</p>
+
+<p>An earlier server plugin, <a href="https://github.com/neo4j-contrib/neo4j-geoff">neo4j-geoff</a>,
+is now also compatible with Neo4j 2.0 but does not have support for labels,
+unlike load2neo. A client-only version also exists in <a href="http://book.py2neo.org/en/latest/geoff/">py2neo</a>,
+which also has no label support and, due to its use of the REST API, is somewhat
+less scalable than the server extensions.</p>
 
 <h3>Syntax Overview</h3>
 
-<p>A Geoff document is composed of one or more subgraphs, separated by the <code>~~~~</code> sequence. Each subgraph consists of one or more paths, consisting of nodes and relationships. For example:</p>
+<p>A Geoff document is composed of one or more subgraphs, separated by the <code>~~~~</code> sequence. Each subgraph consists of one or more paths, each containing a number of nodes and relationships. For example:</p>
 
 <pre>
 (alice {"name":"Alice"})
@@ -81,9 +97,6 @@
 (alice)-[:KNOWS]->(dave:Person {"name":"Dave"})
 </pre>
 
-<h3>Loading Geoff via Server Extension</h3>
-
-<p>See the <a href="https://github.com/nigelsmall/load2neo">load2neo</a> project.</p>
 
 <h3>Full Syntax Specification</h3>
 
