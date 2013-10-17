@@ -29,24 +29,22 @@
 
         <h2>Syntaq</h2>
 
-        <p>Syntaq is a lightweight markup language based on (and backward compatible with) <a href="http://www.wikicreole.org/">Creole</a>. On top of standard Creole notation, Syntaq also supports the following:</p>
-
-        <ul>
-          <li>Subscript and superscript</li>
-          <li>Inline and block quotations</li>
-          <li>Inline and block computer code</li>
-          <li>HTML class values on preformatted and code blocks</li>
-          <li>Table cell alignment</li>
-        </ul>
+        <p>Syntaq is a lightweight markup language based on (and backward 
+        compatible with) <a href="http://www.wikicreole.org/">Creole</a>. The 
+        aim of the Creole project has been to create a markup language that 
+        adopts the best practices of other markup languages and is both 
+        intuitive and internally consistent. The Syntaq project provides both 
+        a continuation of this work and a
+        <a href="https://github.com/nigelsmall/syntaq">reference parser</a>.</p>
         
         <a name="cheatsheet"></a>
         <h3>Cheat Sheet</h3>
         
         <table>
           <tr>
-            <th>Markup</th>
+            <th width="50%">Markup</th>
             <th></th>
-            <th>Output</th>
+            <th width="50%">Output</th>
           </tr>
           <tr>
             <td>= Heading<br>== Subheading<br>=== Section Heading</td>
@@ -99,29 +97,29 @@ def hello():
           </tr>
           <tr><td colspan="3"><hr></td></tr>
           <tr>
-            <td>[[http://mozilla.org/]]</td>
+            <td>[[http://w3.org/]]</td>
             <td>&rarr;</td>
-            <td><a href="http://mozilla.org/">http://mozilla.org/</a></td>
+            <td><a href="http://w3.org/">http://w3.org/</a></td>
           </tr>
           <tr>
-            <td>[[http://mozilla.org/|Mozilla]]</td>
+            <td>[[http://w3.org/|W3C]]</td>
             <td>&rarr;</td>
-            <td><a href="http://mozilla.org/">Mozilla</a></td>
+            <td><a href="http://w3.org/">W3C</a></td>
           </tr>
           <tr>
-            <td>{{mozilla.png}}</td>
+            <td>{{w3c.png}}</td>
             <td>&rarr;</td>
-            <td><img src="images/mozilla.png"></td>
+            <td><img src="images/w3c.png"></td>
           </tr>
           <tr>
-            <td>{{mozilla.png|Mozilla}}</td>
+            <td>{{w3c.png|W3C}}</td>
             <td>&rarr;</td>
-            <td><img src="images/mozilla.png" title="Mozilla"></td>
+            <td><img src="images/w3c.png" title="W3C"></td>
           </tr>
           <tr>
-            <td>[[http://mozilla.org/|{{mozilla.png}}]]</td>
+            <td>[[http://w3.org/|{{w3c.png}}]]</td>
             <td>&rarr;</td>
-            <td><a href="http://mozilla.org/"><img src="images/mozilla.png"></a></td>
+            <td><a href="http://w3.org/"><img src="images/w3c.png"></a></td>
           </tr>
           <tr><td colspan="3"><hr></td></tr>
           <tr>
@@ -154,9 +152,17 @@ def hello():
           </tr>
           <tr><td colspan="3"><hr></td></tr>
           <tr>
-            <td>|=Table Headers|=Use Pipes|<br>|and so&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|do cells&nbsp;&nbsp;|</td>
+            <td>|=Table|=Header|<br>|table|row|<br>|left&nbsp;&nbsp;&nbsp;&nbsp;|aligned&nbsp;&nbsp;|<br>|&nbsp;centre&nbsp;|&nbsp;aligned&nbsp;|<br>|&nbsp;&nbsp;&nbsp;right|&nbsp;&nbsp;aligned|</td>
             <td>&rarr;</td>
-            <td></td>
+            <td>
+              <table>
+                <tr><th>Table</th><th>Header</th></tr>
+                <tr><td>table</td><td>row</td></tr>
+                <tr><td align="left">left</td><td align="left">aligned</td></tr>
+                <tr><td align="center">centre</td><td align="center">aligned</td></tr>
+                <tr><td align="right">right</td><td align="right">aligned</td></tr>
+              </table>
+            </td>
           </tr>
           <tr><td colspan="3"><hr></td></tr>
           <tr>
