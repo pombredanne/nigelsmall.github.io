@@ -1,11 +1,62 @@
 <!DOCTYPE html>
 <html>
+
   <head>
     <meta charset='utf-8'>
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <meta http-equiv="refresh" content="0; url=https://github.com/nigelsmall/load2neo">
+
+    <link rel="stylesheet" type="text/css" href="css/terminal.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="css/pygment_trac.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="css/print.css" media="print" />
+
+    <title>Load2neo - Nigel Small - Open Sorcery</title>
+    
+    <script src="js/ns.js"></script>
   </head>
+
   <body>
+
+    <header>
+      <div class="container">
+        <h1><a href="/">Nigel Small</a></h1>
+        <h2>Open Sorcery</h2>
+        <div class="contact">
+          <a href="https://github.com/nigelsmall"><img src="img/github_mark.png"></a>
+          <a href="https://twitter.com/technige"><img src="img/twitter_mark.png"></a>
+        </div>
+      </div>
+    </header>
+
+    <div class="container">
+      <section id="main_content">
+
+        <h2>Load2neo</h2>
+
+        <p>Load2neo is a <a href="http://docs.neo4j.org/chunked/milestone/server-unmanaged-extensions.html">server extension</a>
+        written for Neo4j 2.0 and upwards
+        that provides a facility for bulk loading data into a
+        <a href="http://neo4j.org/">Neo4j</a> database. Currently, only the
+        <a href="geoff">Geoff</a> format is supported although XML support
+        will follow.</p>
+
+        <h3>Installation</h3>
+        
+        <p>To install, build from the <a href="https://github.com/nigelsmall/load2neo">source code</a>, drop the jar file into the server plugins directory and 
+        edit the <code>conf/neo4j-server.properties</code> file to ensure the
+        extension is mounted:</p>
+
+        <pre><code>org.neo4j.server.thirdparty_jaxrs_classes=com.nigelsmall.load2neo=/load2neo</code></pre>
+        
+        <p>You will need to restart the server for the configuration and extension to be loaded.</p>
+        
+        <h3>Usage</h3>
+
+        <pre><code>curl -X POST http://localhost:7474/load2neo/load/geoff -d '(alice)&lt;-[:KNOWS]-&gt;(bob)'</code></pre>
+        <pre><code>curl -X POST http://localhost:7474/load2neo/load/geoff -d @foo.geoff</code></pre>
+        
+      </section>
+    </div>
+  
 <script type="text/javascript">
 var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
 document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
