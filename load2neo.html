@@ -54,6 +54,37 @@
         <pre><code>curl -X POST http://localhost:7474/load2neo/load/geoff -d '(alice)&lt;-[:KNOWS]-&gt;(bob)'</code></pre>
         <pre><code>curl -X POST http://localhost:7474/load2neo/load/geoff -d @foo.geoff</code></pre>
         
+        <h2>Performance</h2>
+        
+        <p>In limited tests, load2neo has shown good performance. The timings below were taken for a repeated load of a
+        <a href="https://raw.github.com/nigelsmall/load2neo/master/src/test/resources/40000.geoff">test Geoff file</a>
+        containing 40,000 nodes and 40,000 relationships on a quad-core <em>AMD Phenom&trade; II X4 965</em>
+        with 4GB RAM.</p>
+        
+        <table>
+        <tr><th>turn</th><th style="text-align:right">parse time (ms)</th><th style="text-align:right">load time (ms)</th></tr>
+        <tr><td>1*</td><td align="right">1185</td><td align="right">253682</td><td>
+        <tr><td>2</td><td align="right">760</td><td align="right">2074</td><td>
+        <tr><td>3</td><td align="right">740</td><td align="right">1745</td><td>
+        <tr><td>4</td><td align="right">689</td><td align="right">1593</td><td>
+        <tr><td>5</td><td align="right">699</td><td align="right">1585</td><td>
+        <tr><td>6</td><td align="right">694</td><td align="right">1529</td><td>
+        <tr><td>7</td><td align="right">670</td><td align="right">1530</td><td>
+        <tr><td>8</td><td align="right">683</td><td align="right">1827</td><td>
+        <tr><td>9</td><td align="right">715</td><td align="right">1622</td><td>
+        <tr><td>10</td><td align="right">671</td><td align="right">1531</td><td>
+        <tr><td>11</td><td align="right">664</td><td align="right">1565</td><td>
+        <tr><td>12</td><td align="right">695</td><td align="right">1542</td><td>
+        <tr><td>13</td><td align="right">719</td><td align="right">1590</td><td>
+        <tr><td colspan="3"><hr></td></tr>
+        <tr><td>minimum</td><td align="right">664</td><td align="right">1529</td><td>
+        <tr><td>maximum</td><td align="right">760</td><td align="right">2074</td><td>
+        <tr><td>average</td><td align="right">700</td><td align="right">1644</td><td>
+        </table>
+        
+        <p><em>* The first turn was discarded to allow the cache to warm up</em></p>
+
+        
       </section>
     </div>
   
