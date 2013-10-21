@@ -27,14 +27,14 @@
     <div class="container">
       <section id="main_content">
 
-<h2>Geoff</h2>
+<h1>Geoff</h1>
 
 <p>Geoff is a text-based interchange format for <a href="http://neo4j.org/">Neo4j</a> graph data that should be
 instantly readable to anyone familiar with
 <a href="http://www.neo4j.org/learn/cypher">Cypher</a>, on which its syntax is based.</p>
 
 
-<h3>Implementations</h3>
+<h2>Implementations</h2>
 
 <p>There have been three Geoff parser-loader implementations, each based on a
 slightly different variant of the format. The most recent version, described
@@ -50,7 +50,7 @@ This also has no label support and, due to its use of the REST API, is somewhat
 less scalable than the server extensions. A demo of the XML to Geoff
 conversion tool, distributed with py2neo, can be seen at <a href="http://api.nigelsmall.com/xml-geoff">http://api.nigelsmall.com/xml-geoff</a>.</p>
 
-<h3>Syntax Overview</h3>
+<h2>Syntax Overview</h2>
 
 <p>A Geoff document is composed of one or more subgraphs, separated by the <code>~~~~</code> sequence. Each subgraph consists of one or more paths, each containing a number of nodes and relationships. For example:</p>
 
@@ -61,7 +61,7 @@ conversion tool, distributed with py2neo, can be seen at <a href="http://api.nig
 (alice)<-[:KNOWS]->(bob)<-[:KNOWS]->(carol)<-[:KNOWS]->(alice)
 </pre>
 
-<h3>Nodes</h3>
+<h2>Nodes</h2>
 
 <p>Each node can have an identifier, a set of labels and a set of associated properties. None of these attributes are mandatory though, and in the simplest case, a node may just be an empty set of parentheses: <code>()</code>. The examples below show some of the combinations possible:</p>
 
@@ -73,11 +73,11 @@ conversion tool, distributed with py2neo, can be seen at <a href="http://api.nig
 (dinner:Spam:Egg:Chips {"foo":"bar","answer":42})
 </pre>
 
-<h3>Relationships</h3>
+<h2>Relationships</h2>
 
 <p>Any number of nodes may be chained together in a path using relationships, drawn as in Cypher.</p>
 
-<h3>Properties</h3>
+<h2>Properties</h2>
 
 <p>Properties are represented in JSON format and may be provided in single nodes, in longer paths or in both:</p>
 
@@ -87,7 +87,7 @@ conversion tool, distributed with py2neo, can be seen at <a href="http://api.nig
 (alice {"age":33})<-[:KNOWS]->(bob {"age":44})
 </pre>
 
-<h3>Hooks</h3>
+<h2>Hooks</h2>
 
 <p>When a subgraph is loaded into a database, new nodes and relationships are generally created. In some instances, it is desirable to use an existing node instead. In such cases, a hook can be used to bind a node to an existing one with the same label, key and value. If none is found, one will be created; if more than one is found, one will be chosen.</p>
 
@@ -101,7 +101,7 @@ conversion tool, distributed with py2neo, can be seen at <a href="http://api.nig
 </pre>
 
 
-<h3>Full Syntax Specification</h3>
+<h2>Full Syntax Specification</h2>
 
 <p>A full specification for the Geoff syntax is described below:</p>
 
@@ -143,7 +143,7 @@ boolean_array  := "[" ~ JSON_BOOLEAN (~ "," ~ JSON_BOOLEAN)* ~ "]"
 * Mandatory whitespace is represented by "_" and optional whitespace by "~"
 </pre>
 
-<h3>Why "Geoff"?</h3>
+<h2>Why "Geoff"?</h2>
 
 <p>Geoff is a contrived acronym standing for Graph Export Object File Format.
 More importantly, it was the name of my grandfather who gave me my first
